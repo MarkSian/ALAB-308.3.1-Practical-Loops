@@ -5,3 +5,7 @@
 // 3) If a number is divisible by 5, log "Buzz"
 // 4) If a number is divisible by both 3 and 5, log "FizzBuzz"
 // 5) If a number is not divisible by either 3 or 5, log the number
+
+for (let i = 1; i <= 100; i++) {
+    
+}
