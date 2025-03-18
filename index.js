@@ -134,3 +134,41 @@ parseCSV(csvString2);
 // 8 3.43 0.204 0.192
 // 9 3.92 0.226 0.205
 // 10 4.41 0.238 0.232
+
+/* Part 3: Feeling loopy  Class Review*/
+
+let str = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+
+let cell1 = "";
+let cell2 = "";
+let cell3 = "";
+let cell4 = "";
+let commas = 0
+
+
+for (let j = 0; j < str.length; j++) {
+    if (str[j] === ",") {
+        commas++;
+    } else if (str[j] === "\n") {
+        console.log(cell1, cell2, cell3, cell4);
+        commas = 0;
+        cell1 = "";
+        cell2 = "";
+        cell3 = "";
+        cell4 = "";
+    } else {
+        if (commas === 0) {
+            cell1 += str[j];
+        } else if (commas === 1) {
+            cell2 += str[j];
+        } else if (commas === 2) {
+            cell3 += str[j];
+        } else {
+            cell4 += str[j];
+        }
+    }
+    if (j === str.length - 1) {
+        console.log(cell1, cell2, cell3, cell4);
+    }
+
+}
