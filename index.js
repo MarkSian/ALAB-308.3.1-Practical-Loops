@@ -138,24 +138,31 @@ parseCSV(csvString2);
 /* Part 3: Feeling loopy  Class Review*/
 
 let str = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
-
+// Initialize variables to store the values of the four cells in a row
 let cell1 = "";
 let cell2 = "";
 let cell3 = "";
 let cell4 = "";
+
+// Counter to track the number of commas encountered in the current row
 let commas = 0
 
-
+// Loop through each character in the CSV string
 for (let j = 0; j < str.length; j++) {
+    // If the current character is a comma, increment the comma counter
     if (str[j] === ",") {
         commas++;
+
+        // If the current character is a newline ("\n"), log the current row and reset variables
     } else if (str[j] === "\n") {
+        // Log the current row
         console.log(cell1, cell2, cell3, cell4);
         commas = 0;
         cell1 = "";
         cell2 = "";
         cell3 = "";
         cell4 = "";
+        // If the character is not a comma or newline, add it to the appropriate cell
     } else {
         if (commas === 0) {
             cell1 += str[j];
@@ -167,6 +174,7 @@ for (let j = 0; j < str.length; j++) {
             cell4 += str[j];
         }
     }
+    // If this is the last character in the string, log the final row
     if (j === str.length - 1) {
         console.log(cell1, cell2, cell3, cell4);
     }
